@@ -78,7 +78,7 @@ jobs:
 
     - name: Configure CodeArtifact
       if: matrix.python-version == '3.13' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
-      run: 
+      run: |
         # Install twine from PyPI first
         pip install twine
 
@@ -91,7 +91,7 @@ jobs:
 
     - name: Publish to CodeArtifact
       if: matrix.python-version == '3.13' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
-      run: 
+      run: |
         # Delete existing package (ignore if it doesn't exist)
         aws codeartifact delete-package-versions \
           --domain chloe-clem \
