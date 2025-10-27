@@ -16,7 +16,7 @@ permissions:
 jobs:
   test:
     runs-on:
-      - codebuild-github-actions-practice-${{ github.run_id }}-${{ github.run_attempt }}
+      - ubuntu-latest
     environment: test
     strategy:
       matrix:
